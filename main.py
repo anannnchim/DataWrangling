@@ -1,6 +1,8 @@
 import pandas as pd
 from data_extraction.data_extractor import DataExtractor
 from data_quality_assessment.data_quality_checker import DataQualityChecker
+import matplotlib.pyplot as plt
+
 def main():
 
     # Input
@@ -24,6 +26,23 @@ def main():
     # Data Profiling
     print("Data Profiling Process ---------------------------------")
     print(df.describe())
+    df = df.iloc[1:] # remove the first row
+    fig, ax = plt.subplots()
+    ax.plot(df.iloc[:,0],df.iloc[:, 3])
+    plt.show()
+
+
+
+    #
+    # import matplotlib.pyplot as plt
+    # import numpy as np
+    #
+    # x = np.linspace(0, 2 * np.pi, 200)
+    # y = np.sin(x)
+    #
+    # fig, ax = plt.subplots()
+    # ax.plot(x, y)
+    # plt.show()
 
 
 
