@@ -8,6 +8,7 @@ def main():
     table_index = 0
 
     # Extract data
+    print("Extraction Process ---------------------------------")
     extractor = DataExtractor(url)
     extractor.fetch_page()
     extractor.extract_table(table_index)
@@ -15,9 +16,14 @@ def main():
     df = extractor.to_dataframe()
 
     # Quality Assessment
+    print("Quality Assessment Process ---------------------------------")
     checker = DataQualityChecker(df)
     completeness = checker.calculate_completeness()
     print(completeness)
+
+    # Data Profiling
+    print("Data Profiling Process ---------------------------------")
+    print(df.describe())
 
 
 
