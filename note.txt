@@ -35,3 +35,4 @@ class DataExtractor:
         else:
             print("Table object is None. Please extract the table first.")
             return None
+
